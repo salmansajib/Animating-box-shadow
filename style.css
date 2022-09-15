@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  max-width: 350px;
+  background-color: #f8f8f8;
+  color: rgb(48, 48, 48);
+  padding: 1rem 1rem 2rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 1.5rem;
+  position: relative;
+  box-shadow: 0 0 2px rgb(48, 48, 48, 90%);
+  transition: scale 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+
+.card:hover,
+.card:focus {
+  cursor: pointer;
+  scale: 1.005;
+  box-shadow: 0 0 0 transparent;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0px 5px 20px rgb(48, 48, 48, 30%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.card:hover::after,
+.card:focus::after {
+  opacity: 1;
+}
+
+.hero-image {
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.title {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  line-height: 1.1;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.2;
+}
